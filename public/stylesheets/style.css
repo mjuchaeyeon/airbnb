@@ -68,7 +68,7 @@ a {
   -moz-background-size: 100%;
   -o-background-size: 100%;
   background-size: 100%;
-  min-height: 20em;
+  min-height: 30em;
   color: #000;
   text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3); }
 
@@ -91,19 +91,19 @@ a {
       margin: 20px 0;
       color: #bbb; }
 
-form.todos {
+form.books {
   width: 100%;
   margin: 0 0 1em 0;
   padding: 1em;
   background: #acddf2; }
-  form.todos .main input[type='text'] {
+  form.books .main input[type='text'] {
     font-size: 1.4em;
     border: 1px solid #2c9cd2;
     padding: 0.5em 1em;
     margin-bottom: 1em;
     width: 100%;
     box-sizing: border-box; }
-  form.todos .actions button {
+  form.books .actions button {
     margin-top: 1em; }
 
 .tasks {

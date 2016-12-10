@@ -1,0 +1,26 @@
+extends ../layout
+
+block content
+  .container
+    if rooms.id
+      h1.page-header 숙소 정보 수정
+    else
+      h1.page-header 새로운 숙소 등록
+    form(action = (rooms.id) ? "/rooms/#{rooms.id}?_method=PUT" : "/rooms", method='POST')
+      .form-group
+        label(for='title') Title
+        input.form-control(type='text', id='title', name='title', placeholder='Title', value=rooms.title)
+        label(for='city') City
+        input.form-control(type='text', id='city', name='city', placeholder='City', value=rooms.city)
+        label(for='address') Address
+        input.form-control(type='text', id='address', name='address', placeholder='Address', value=rooms.address)
+        label(for='charge') Charge
+        input.form-control(type='number', id='charge', name='charge', placeholder='Charge', value=rooms.charge)
+      .form-group
+          label(for='comment') Comment
+          textarea.form-control(id='comment', rows='10', name='comment', placeholder='comment here', value=rooms.comment)
+
+      div.form-actions
+        a.btn.btn-default(href='javascript:window.history.back();') 뒤로 
+        | 
+        button.btn.btn-primary(type='submit') 완료

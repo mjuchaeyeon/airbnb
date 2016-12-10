@@ -32,7 +32,7 @@ module.exports = function(passport) {
           return done(null, false, req.flash('danger', '비밀번호가 일치하지 않습니다.'));
         }
 
-        return done(null, user, req.flash('success', '로그인되었습니다.'));
+        return done(null, user, req.flash('success', '로그인 성공'));
       });
     });
   }));

@@ -1,0 +1,47 @@
+extends ../layout
+
+block content
+  .container
+    h1.page-header 숙소를 등록해보세요.
+    
+    table.table.table-bordered
+      thead
+        tr
+          th 호스트명
+          th 도시
+          th 숙소 제목
+          th 상세 주소
+          th 요금
+          th 상세한 설명
+          th 수정 및 삭제
+      tbody
+        tr
+        each room in rooms
+          tr
+            td= room.host
+            td= room.city
+            td
+              a(href='/rooms/#{room.id}')= room.title
+            td= room.address
+            td= room.charge
+            td= room.comment
+            td
+              a.btn.btn-xs.btn-default(href='/rooms/#{room.id}/edit') 수정
+              | 
+              a.btn.btn-xs.btn-default(data-id=room.id, class='delete') 삭제
+              //- 클릭한 데이터가 id가 되고 room.id는 모델 만들때마다 자동으로 ㅐ생성
+              
+
+    a.btn.btn-primary(href='/rooms/new') 글쓰기
+
+    form#deleteForm(style='display:none', method="POST")
+            
+    script(type='text/javascript').
+      $(".delete").click(function(e) {
+        var id = $(e.currentTarget).data('id');
+        if (confirm('정말 삭제하시겠습니까?')) {
+          $("#deleteForm").attr('action', "/rooms/" + id + "?_method=DELETE").submit();          
+        }
+        return false;
+      });
+            

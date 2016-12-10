@@ -3,20 +3,15 @@ extends layout
 block hero-unit
   .jumbotron
     .container
-      h2 AIRBNB와 함께 여행을 떠나보세요~~~~!! d
+      //- h1 AIRBNB와 함께 여행을 떠나보세요
 
 block content
   .container
     .row
-      .col-md-6
-        include ./includes/todo-main
-    .spinner
-      .background
-      .foreground
-        p
-          i.fa.fa-circle.o.notch.fa-spin.fa-4x
-        p Loading...
-    script(type='text/javascript', src='/javascripts/todos.js')
+      .col-md-12
+        include ./includes/book
+
+    //- script(type='text/javascript', src='/javascripts/books.js')
 
    
     .col-md-6

@@ -11,7 +11,7 @@
     #navbar.collapse.navbar-collapse
       ul.nav.navbar-nav
         li
-          a(href='/todos') 숙소 검색
+          a(href='/books') 숙소 검색
         li
           a(href='/users') 사용자 목록
       ul.nav.navbar-nav.navbar-right
@@ -19,10 +19,12 @@
           li
             a(href='/users/#{currentUser._id}') 사용자 정보
           li
+            a(href='/rooms') 호스팅 하기
+          li
             a(href='/signout') 로그아웃
         else
-          li
-            a(href='/hosting') 호스팅 하기
+          //- li
+          //-   a(href='/rooms') 호스팅 하기
           li
             a(href='/signin') 로그인
           li

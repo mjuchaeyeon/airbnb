@@ -20,6 +20,7 @@ var TaskController = function() {
     setAjaxHandler();
     this.taskTemplate = _.template($("#task-template").html());
     this.load();
+
     $("#post-task").click(function() {
       self.postTask();
     }.bind(this));
@@ -150,3 +151,15 @@ var TaskController = function() {
 
   return Constructor;
 } ();
+
+
+
+// $(function(){
+//   $("post-task").click(function(){
+//       window.location.replace("http://www.google.com");
+//   });
+//   // 1. 버튼 액션을 걸고
+//   // 2. 경로에 ?파라메터 붙여서 보내면
+//   // 3. routes req.param. 
+//   // 4. room 검색
+// });
