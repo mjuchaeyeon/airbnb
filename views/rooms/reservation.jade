@@ -1,0 +1,35 @@
+extends ../layout
+
+block content
+  .container
+    h1.page-header 예약 정보를 입력하세요
+    form(action='/test', method='POST')
+      .form-group.form-inline
+        label(for='checkIn') CheckIn
+        select.form-control(name='checkInMonth')
+          option(value='1') 1월
+          option(value='2') 2월
+        select.form-control(name='checkInDay')
+          option(value='1') 1일
+          option(value='2') 2일
+        label(for='spacebar') 　
+        label(for='checkOut') CheckOut
+        select.form-control(name='checkOutMonth')
+          option(value='1') 1월
+          option(value='2') 2월
+        select.form-control(name='checkOutDay')
+          option(value='1') 1일
+          option(value='2') 2일
+        label(for='spacebar') 　
+        label(for='person') 인원수
+        select.form-control(name='person')
+          option(value='0', selected) 선택
+          option(value='1') 1명
+          option(value='2') 2명
+        
+      div.form-actions
+        a.btn.btn-default(href='javascript:window.history.back();') 뒤로 
+        | 
+        button.btn.btn-primary(type='submit', class='request') 예약요청
+
+  });

@@ -1,0 +1,26 @@
+extends ../layout
+
+block content
+  .container
+      h1.page-header 예약 요청 확인
+
+      table.table.table-bordered
+        thead
+         tr
+          th 예약자 이름
+          th 체크인 날짜
+          th 체크아웃 날짜
+          th 인원 수
+
+    //-   tbody
+    //-     each room in rooms
+    //-       tr
+    //-         td= room.host
+    //-         td= room.city
+    //-         td
+    //-           a(href='/rooms/#{room.id}')= room.title
+    //-         td= room.address
+    //-         td= room.charge
+    //-         td= room.comment
+    //-         td
+    //-           a.btn.btn-xs.btn-default(href='books/reservation') 예약

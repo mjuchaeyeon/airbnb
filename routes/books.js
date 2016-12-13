@@ -28,4 +28,8 @@ router.get('/cities', needAuth, function(req, res, next) {
   });
 });
 
+router.get('/reservation', needAuth, function(req, res, next) {
+    res.render('rooms/reservation', {reservation: {}});
+});
+
 module.exports = router;

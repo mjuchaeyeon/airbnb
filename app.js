@@ -16,6 +16,8 @@ var routes = require('./routes/index'),
     books = require('./routes/books'),
     rooms = require('./routes/rooms'),
     tasks = require('./routes/tasks');
+    confirm = require('./routes/confirm');
+    
 
 var routeAuth = require('./routes/auth');
 
@@ -54,9 +56,6 @@ app.use('/bower_components',  express.static(path.join(__dirname, '/bower_compon
 app.use(passport.initialize());
 app.use(passport.session());
 
-//
-//
-//
 
 app.use(function(req, res, next) {
   res.locals.currentUser = req.user;
@@ -71,6 +70,8 @@ app.use('/users', users);
 app.use('/books', books);
 app.use('/tasks', tasks);
 app.use('/rooms', rooms);
+app.use('/confirm', confirm);
+
 routeAuth(app, passport);
 
 // catch 404 and forward to error handler

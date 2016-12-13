@@ -5,9 +5,7 @@ block content
     h1.page-header= rooms.title
     p
       b City #{rooms.city}
-      |
       b Address #{rooms.address}
-      |
       b Charge (per 1 days) #{rooms.charge}
       | 
       span at #{moment(rooms.createdAt).format('YYYY-MM-DD HH:mm:ss')} 

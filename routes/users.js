@@ -50,6 +50,15 @@ router.get('/', needAuth, function(req, res, next) {
   });
 });
 
+router.get('/noAdministrator', function(req, res, next) {
+  User.find({}, function(err, users) {
+    if (err) {
+      return next(err);
+    }
+    res.render('users/noAdministrator', {user: users});
+  });
+});
+
 router.get('/new', function(req, res, next) {
   res.render('users/new', {messages: req.flash()});
 });
@@ -118,6 +127,7 @@ router.get('/:id', function(req, res, next) {
     res.render('users/show', {user: user});
   });
 });
+
 
 router.post('/', function(req, res, next) {
   var err = validateForm(req.body, {needPassword: true});

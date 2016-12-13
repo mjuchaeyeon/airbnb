@@ -13,18 +13,26 @@
         li
           a(href='/books') 숙소 검색
         li
-          a(href='/users') 사용자 목록
+          a(href='/rooms') 호스팅 하기
+        li
+          a(href='/confirm') 예약 요청 보기
       ul.nav.navbar-nav.navbar-right
-        if (currentUser) 
-          li
-            a(href='/users/#{currentUser._id}') 사용자 정보
-          li
-            a(href='/rooms') 호스팅 하기
-          li
-            a(href='/signout') 로그아웃
+        if (currentUser)
+          if (currentUser.email == 'chae-yeon@nate.com')
+            li
+              a(href='/users') 사용자 목록
+            li
+              a(href='/users/#{currentUser._id}') 프로필
+            li
+              a(href='/signout') 로그아웃
+          else
+            li
+              a(href='/users/noAdministrator') 사용자 목록
+            li
+              a(href='/users/#{currentUser._id}') 프로필
+            li
+              a(href='/signout') 로그아웃
         else
-          //- li
-          //-   a(href='/rooms') 호스팅 하기
           li
             a(href='/signin') 로그인
           li
